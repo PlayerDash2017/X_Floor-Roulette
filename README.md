@@ -1,6 +1,10 @@
 
 # X_Floor Roulette
 
+**Maker:** PlayerDash2017
+**Inspiration:** Extreme Demon Roulette
+**Tool:** Visual Studio Code
+
 Una versión adaptada del concepto **Extreme Demon Roulette** de Geometry Dash, pero para los fangames de **I Wanna Be The Guy** con el tag `x_floor` (juegos de x pisos).  
 El reto consiste en superar **100 juegos**, avanzando piso por piso en orden creciente.
 
@@ -25,7 +29,7 @@ Cada juego incluye:
 - **Número total de pisos**
 - **Imagen** (pantalla de título)
 - **Link de descarga**
-- *(Opcional)* Descripción o consejos específicos para el juego
+- **Descripción o consejos específicos para el juego** (Depende del juego)
 
 Algunos juegos tienen reglas especiales para los pisos válidos, por ejemplo:
 - **Crimson Needle 3**: No se juegan pisos entre 32 y 69.

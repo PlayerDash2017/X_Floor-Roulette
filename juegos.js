@@ -181,7 +181,7 @@ const JUEGOS_DATA = [
     pisos: 100,
     imagen: "Qowulu100.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=19923",
-    descripcion: "Deberas llegar el piso y luego cambiar de screen para que cuente como clear"
+    descripcion: "Deberas llegar el piso y luego cambiar de screen para que cuente como clear."
   },
   {
     nombre: "I wanna challenge the mashikaku",
@@ -366,7 +366,7 @@ const JUEGOS_DATA = [
     pisos: 100,
     imagen: "Shroom.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=21235",
-    descripcion: "El extra no es necesario"
+    descripcion: "El extra no es necesario."
   },
   {
     nombre: "Chile Game",
@@ -465,7 +465,7 @@ const JUEGOS_DATA = [
     pisos: 100,
     imagen: "100FloorMedley.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=27127",
-    descripcion: "El extra no es necesario"
+    descripcion: "El extra no es necesario."
   },
   {
     nombre: "I wanna Variety 100",
@@ -487,7 +487,7 @@ const JUEGOS_DATA = [
     pisos: 100,
     imagen: "CN25.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=27435",
-    descripcion: "Los secretos no son necesarios"
+    descripcion: "Los secretos no son necesarios."
   },
   {
     nombre: "Amaranth Needle",
@@ -566,7 +566,7 @@ const JUEGOS_DATA = [
     pisos: 100,//1f-31, 70f-100f
     imagen: "CN3.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=20889",
-    descripcion: "Para llegar el piso 90 deberas conseguir los secretos del piso 31"
+    descripcion: "Para llegar el piso 90 deberas conseguir los secretos del piso 31."
   },
   {
     nombre: "I wanna find the fine time",
@@ -802,7 +802,7 @@ const JUEGOS_DATA = [
     pisos: 120,
     imagen: "120Dreams.png",
     descarga: "https://www.mediafire.com/file/of7njwsj156r4z4",
-    descripcion: "Jugar solo el normal"
+    descripcion: "Jugar solo en la version normal."
   },
   {
     nombre: "I Wanna Normal Floors",
