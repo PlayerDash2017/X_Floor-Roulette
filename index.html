@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IWBTG X_Floor Roulette</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="container">
+    <h1>IWBTG X_Floor Roulette</h1>
+
+    <div id="intro" class="section">
+      <p>Presiona el botón para iniciar el reto de los 100 pisos.</p>
+      <button id="start-btn">Iniciar reto</button>
+    </div>
+
+    <h2>Juegos Superados</h2>
+    <ul id="juegos-pasados"></ul>
+
+    <div id="game-section" class="section hidden">
+      <div id="game-info">
+        <h2 id="game-title"></h2>
+        <img id="game-image" src="" alt="Imagen del juego"/>
+        <p><strong>Dificultad:</strong> <span id="game-difficulty"></span></p>
+        <p><strong>Piso a superar:</strong> <span id="game-floor"></span></p>
+        <p><span id="game-desc"></span></p>
+        <a id="game-download" href="#" target="_blank">Descargar juego</a>
+      </div>
+
+      <div class="buttons">
+        <button id="next-btn">Siguiente juego</button>
+        <button id="giveup-btn">Rendirse</button>
+      </div>
+    </div>
+
+    <div id="giveup-section" class="section hidden">
+      <h2>Te has rendido 😢</h2>
+      <p>Estos son los juegos que te habrían tocado:</p>
+      <ul id="remaining-games"></ul>
+      <button id="restart-btn">Reiniciar reto</button>
+    </div>
+
+    <div id="finished-section" class="section hidden">
+      <h2>¡Felicidades! 🎉</h2>
+      <p>Completaste los 100 pisos del reto.</p>
+      <button id="restart-btn-finish">Reiniciar reto</button>
+    </div>
+  </div>
+
+  <script src="juegos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

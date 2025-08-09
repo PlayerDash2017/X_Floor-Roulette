@@ -1,0 +1,132 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#container {
+  padding: 30px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 15px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.section {
+  margin-top: 30px;
+}
+
+#juegos-pasados,
+#remaining-games {
+  list-style: none;
+  padding: 0;
+}
+
+/*#remaining-games li {
+  background-color: #222;
+  border: 1px solid #333;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}*/
+
+#remaining-games img {
+  width: 100px;
+  height: auto;
+  margin-right: 15px;
+  border-radius: 4px;
+}
+
+#game-info {
+    background-color: #222;
+    border: 1px solid #333;
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 10px;
+    text-align: center;
+}
+
+#game-download {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #444;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #666;
+  border-radius: 6px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#game-download:hover {
+  background-color: #666;
+  transform: scale(1.03);
+}
+
+.game-info h3 {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+}
+
+.game-entry {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.game-entry img {
+  width: 100px;
+  height: auto;
+  margin-right: 15px;
+  border-radius: 4px;
+}
+
+.game-info h3 {
+  margin: 0 0 5px 0;
+}
+
+.game-entry.passed {
+  background-color: #214d20;
+  border: 1px solid #3b8c3b;
+  border-radius: 6px;
+  padding: 8px;
+  color: #d4f5d4;
+  list-style: none;
+}
+
+.game-entry.failed {
+  background-color: #5a2020;
+  border: 1px solid #a83232;
+  border-radius: 6px;
+  padding: 8px;
+  color: #f5d4d4;
+  list-style: none;
+}
+
+#game-image{
+    max-width: 400px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 4px;
+}
