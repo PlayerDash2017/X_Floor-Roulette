@@ -151,7 +151,7 @@ const JUEGOS_DATA = [
     nombre: "I wanna qoqoqo origin",
     dificultad: 33.8,
     pisos: 100,
-    imagen: "QoqoqoOrigin.png",
+    imagen: "QoQoQoOrigin.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=16595"
   },
   {
@@ -407,7 +407,7 @@ const JUEGOS_DATA = [
     nombre: "I wanna trial the 100trap",
     dificultad: 70.3,
     pisos: 100,
-    imagen: "100trap.png",
+    imagen: "100Trap.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=11732"
   },
   {
@@ -553,7 +553,7 @@ const JUEGOS_DATA = [
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=11019"
   },
   {
-    nombre: "I Wanna Maker (The Tower Of Maker by Nick24)",
+    nombre: "I Wanna Maker (The Tower Of Maker)",
     dificultad: 75.0,
     pisos: 100,
     imagen: "Maker.png",
