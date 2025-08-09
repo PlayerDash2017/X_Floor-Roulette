@@ -7,10 +7,10 @@ body {
   text-align: center;
 }
 
-#container {
-  padding: 30px;
-  max-width: 700px;
-  margin: 0 auto;
+header {
+  padding: 20px;
+  background-color: #222;
+  border-bottom: 2px solid #333;
 }
 
 button {
@@ -18,6 +18,16 @@ button {
   margin: 10px;
   font-size: 16px;
   cursor: pointer;
+  background-color: #444;
+  border: 1px solid #666;
+  color: #fff;
+  border-radius: 6px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #666;
+  transform: scale(1.03);
 }
 
 img {
@@ -30,44 +40,73 @@ img {
   display: none;
 }
 
-.section {
+.Section_Challenge {
   margin-top: 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#juegos-pasados,
-#remaining-games {
+/* Listas de juegos */
+#List_Passed,
+#List_Failed {
   list-style: none;
   padding: 0;
 }
 
-/*#remaining-games li {
+.Game_Entry {
+  display: flex;
+  align-items: center;
   background-color: #222;
   border: 1px solid #333;
   border-radius: 8px;
   margin: 10px 0;
   padding: 10px;
-  display: flex;
-  align-items: center;
   text-align: left;
-}*/
+}
 
-#remaining-games img {
+.Game_Entry img {
   width: 100px;
   height: auto;
   margin-right: 15px;
   border-radius: 4px;
 }
 
-#game-info {
-    background-color: #222;
-    border: 1px solid #333;
-    border-radius: 8px;
-    margin: 10px 0;
-    padding: 10px;
-    text-align: center;
+.Game_Info h3 {
+  margin: 0 0 5px 0;
+  font-size: 18px;
 }
 
-#game-download {
+.Game_Entry.Passed {
+  background-color: #214d20;
+  border: 1px solid #3b8c3b;
+  color: #d4f5d4;
+}
+
+.Game_Entry.Failed {
+  background-color: #5a2020;
+  border: 1px solid #a83232;
+  color: #f5d4d4;
+}
+
+/* Info del juego actual */
+#Game_Info {
+  background-color: #222;
+  border: 1px solid #333;
+  border-radius: 8px;
+  margin: 10px auto;
+  padding: 10px;
+  max-width: 500px;
+}
+
+#Game_Image {
+  max-width: 400px;
+  height: auto;
+  margin: 15px 0;
+  border-radius: 4px;
+}
+
+#Game_Download {
   display: inline-block;
   padding: 10px 20px;
   margin-top: 10px;
@@ -79,54 +118,7 @@ img {
   transition: background-color 0.3s, transform 0.2s;
 }
 
-#game-download:hover {
+#Game_Download:hover {
   background-color: #666;
   transform: scale(1.03);
-}
-
-.game-info h3 {
-  margin: 0 0 5px 0;
-  font-size: 18px;
-}
-
-.game-entry {
-  display: flex;
-  align-items: center;
-  margin: 8px 0;
-}
-
-.game-entry img {
-  width: 100px;
-  height: auto;
-  margin-right: 15px;
-  border-radius: 4px;
-}
-
-.game-info h3 {
-  margin: 0 0 5px 0;
-}
-
-.game-entry.passed {
-  background-color: #214d20;
-  border: 1px solid #3b8c3b;
-  border-radius: 6px;
-  padding: 8px;
-  color: #d4f5d4;
-  list-style: none;
-}
-
-.game-entry.failed {
-  background-color: #5a2020;
-  border: 1px solid #a83232;
-  border-radius: 6px;
-  padding: 8px;
-  color: #f5d4d4;
-  list-style: none;
-}
-
-#game-image{
-    max-width: 400px;
-    height: auto;
-    margin-right: 15px;
-    border-radius: 4px;
 }

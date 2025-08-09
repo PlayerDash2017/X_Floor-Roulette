@@ -1,4 +1,4 @@
-const JUEGOS_DATA = [
+const GAME_DATA = [
   //#region Easy 100 floors game
   {
     nombre: "I wanna HunyaaPunpun2",
@@ -423,13 +423,6 @@ const JUEGOS_DATA = [
     pisos: 100,
     imagen: "CrimsonCollab.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=16294"
-  },
-  {
-    nombre: "I Wanna be the Vandal",
-    dificultad: 71.3,
-    pisos: 100,
-    imagen: "Vandal.png",
-    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=21244"
   },
   {
     nombre: "I wanna be the Phantom Needle IV",
@@ -888,6 +881,30 @@ const JUEGOS_DATA = [
     pisos: 42,
     imagen: "MyFloorGame.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=27218"
+  },
+  {
+    nombre: "I wanna Atone the Flower",
+    dificultad: 86.1,
+    pisos: 15,
+    imagen: "AtoneTheFlower.png",
+    descarga: "https://www.iwannawiki.com/games/425"
+  },
+  {
+    nombre: "The Quirky Floor Game",
+    dificultad: 53.0,
+    pisos: 51,
+    imagen: "QuirkyFloorGame.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=28091",
+    descripcion: "Spike Shoot Bruh no cuenta."
+  },
+  {
+    nombre: "I Wanna be the Vandal",
+    dificultad: 71.3,
+    pisos: 49,
+    imagen: "Vandal.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=21244"
   }
   //#endregion
 ];
+
+console.log(GAME_DATA.length);
