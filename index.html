@@ -41,7 +41,46 @@
 
         <section id="Section_Config" class="hidden">
             <h2>Este es el menu de configuraciones.</h2>
-            <p>254 haha</p>
+
+            <!-- Dificultades -->
+            <div class="hidden">
+                <label for="configDiff">Dificultad del reto (0-100):</label>
+                <input type="range" id="configDiff" name="configDiff" min="0" max="100" step="0.1" value="50">
+                <span id="difficultyValue">50</span>
+            </div>
+
+            <!-- Número de juegos -->
+            <div>
+                <label for="configCount">Número de juegos a jugar:</label>
+                <input type="number" id="configCount" name="configCount" min="1" max="100" value="100">
+            </div>
+
+            <!-- Número de Skips -->
+            <div>
+                <label for="configSkip">Número de cambios de juegos:</label>
+                <input type="number" id="configSkip" name="configSkip" min="0" max="5" value="3">
+            </div>
+
+            <!-- Seed de aleatorización -->
+            <div>
+                <label for="configSeed">Seed:</label>
+                <input type="text" id="configSeed" name="configSeed" placeholder="Ejemplo: 12345">
+            </div>
+
+            <!-- Reglas especiales -->
+            <h1>Reglas especiales</h1>
+
+            <!-- Repetir juegos -->
+            <div>
+                <label for="configRepeat">Repetir juegos:</label>
+                <input type="checkbox" id="configRepeat" name="configRepeat">
+            </div>
+
+            <!-- Botones -->
+            <div>
+                <button type="button" id="btnSaveConfig">Guardar configuración</button>
+                <button type="button" id="btnResetConfig">Restaurar configuración</button>
+            </div>
         </section>
 
         <section id="Section_Challenge" class="hidden">
@@ -92,6 +131,7 @@
         </section>
     </main>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
     <script src="script.js"></script>
     <script src="gameInfo.js"></script>
 </body>

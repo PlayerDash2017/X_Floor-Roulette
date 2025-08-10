@@ -54,6 +54,10 @@ window.onload = () => {
         btnSkip.textContent = `Cambiar juego (${skips})`;
         showGame();
     }
+
+    loadConfig();
+
+    print(gameSelect.length)
 };
 
 //En caso de que una imagen no se haya cargado
@@ -62,6 +66,38 @@ document.addEventListener('error', function (e) {
       e.target.src = 'img/NoFound.png';
     }
 }, true);
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Cargar configuraciones guardadas si existen
+    loadConfig();
+
+    // Guardar configuración
+    document.getElementById('btnSaveConfig').addEventListener('click', () => {
+        const difficulty = document.getElementById('configDiff').value;
+        const gameCount = document.getElementById('configCount').value;
+        const gameSkip = document.getElementById('configSkip').value;
+        const allowRepetitions = document.getElementById('configRepeat').checked;
+        const seed = document.getElementById('configSeed').value;
+
+        const config = {
+            difficulty: difficulty,
+            gameCount: gameCount,
+            gameSkip: gameSkip,
+            allowRepetitions: allowRepetitions,
+            seed: seed || null, // Si no hay seed, se guarda como null
+        };
+
+        localStorage.setItem('config', JSON.stringify(config));
+        alert('Configuración guardada');
+    });
+
+    // Restablecer configuración a valores predeterminados
+    document.getElementById('btnResetConfig').addEventListener('click', () => {
+        resetConfig();
+        alert('Configuración restaurada');
+        location.reload();
+    });
+});
 
 //#endregion
 
@@ -85,9 +121,14 @@ btnStart.addEventListener('click', async () => {
     gameSelect = [];
     let gameUsed = new Set();
 
-    for (let piso = 1; piso <= TOTAL_PISOS; piso++) {
+    // Si se proporciona una seed, usarla para la aleatorización
+    var _seed = getConfigValue("Seed");
+    if (_seed)
+        { Math.seedrandom(_seed); } // Usar una librería de seedrandom para generar números aleatorios consistentes
+
+    for (let piso = 1; piso <= getConfigValue("TotalFloor"); piso++) {
         const posibles = gamesAvailable.filter(j => 
-            j.pisos >= piso && !gameUsed.has(j.nombre) && validateGame(j.nombre, piso)
+            j.pisos >= piso && (!gameUsed.has(j.nombre) || getConfigValue("Repeat")) && validateGame(j.nombre, piso)
         );
 
         if (posibles.length === 0) {
@@ -98,12 +139,11 @@ btnStart.addEventListener('click', async () => {
         const elegido = posibles[Math.floor(Math.random() * posibles.length)];
         gameUsed.add(elegido.nombre);
         gameSelect.push({ ...elegido, piso });
-
-        print(posibles.length);
     }
 
-    btnSkip.textContent = "Cambiar juego (3)";
-    skips = 3;
+    skips = getConfigValue("Skip")
+    btnSkip.textContent = `Cambiar juego (${skips})`;
+    
     progress = 0;
     saveProgress();
     showGame();
@@ -113,7 +153,7 @@ btnStart.addEventListener('click', async () => {
 btnNext.addEventListener('click', () => {
     progress++;
 
-    if (progress >= TOTAL_PISOS) {
+    if (progress >= getConfigValue("TotalFloor")) {
         localStorage.removeItem('reto-xfloor');
         showPassedGames();
         showFinished();
@@ -127,16 +167,19 @@ btnNext.addEventListener('click', () => {
 
 //Cambiar de juego
 btnSkip.addEventListener('click', () => {
-    if (skips <= 0){
-        alert("Ya no puedes volver a cambiar de juego.")
+    if (skips <= 0) {
+        alert("Ya no puedes volver a cambiar de juego.");
         return;
     }
 
-    skips --;
-
+    gamesAvailable = GAME_DATA;
     const pisoActual = gameSelect[progress].piso;
     const gameUsed = new Set(gameSelect.map(j => j.nombre)); 
-    gameUsed.delete(gameSelect[progress].nombre); // Permitimos quitar el actual para cambiarlo
+
+    // Si no se permite repetición, no añadir el juego actual a la lista de juegos ya usados
+    if (!getConfigValue("Repeat")) {
+        gameUsed.delete(gameSelect[progress].nombre);
+    }
 
     const posibles = gamesAvailable.filter(j => 
         j.pisos >= pisoActual &&
@@ -149,10 +192,12 @@ btnSkip.addEventListener('click', () => {
         return;
     }
 
-    const _confirm = confirm("¿Seguro que quieres cambiar de juego?.");
+    const _confirm = confirm("¿Seguro que quieres cambiar de juego?");
     if (!_confirm) return;
 
+    skips--;
     const elegido = posibles[Math.floor(Math.random() * posibles.length)];
+
     gameSelect[progress] = { ...elegido, piso: pisoActual };
     btnSkip.textContent = `Cambiar juego (${skips})`;
     saveProgress();
@@ -166,10 +211,11 @@ btnGiveUp.addEventListener('click', () => {
 
 //Reintentar el reto
 btnRestart.forEach(btn => {
-  btn.addEventListener('click', () => {
-    localStorage.removeItem('reto-xfloor');
-    location.reload();
-  });
+    btn.addEventListener('click', () => {
+        localStorage.removeItem('reto-xfloor');
+        resetConfig();
+        location.reload();
+    });
 });
 
 //#endregion
@@ -267,6 +313,40 @@ function showPassedGames() {//mostrar juegos pasados
             </div>
         `;
         passedList.appendChild(li);
+    }
+}
+
+// Función para cargar configuraciones guardadas
+function loadConfig() {
+    const savedConfig = JSON.parse(localStorage.getItem('config'));
+
+    if (savedConfig) {
+        document.getElementById('configDiff').value = savedConfig.difficulty || 50;
+        document.getElementById('configCount').value = savedConfig.gameCount || 100;
+        document.getElementById('configSkip').value = savedConfig.gameSkip || 3;
+        document.getElementById('configRepeat').checked = savedConfig.allowRepetitions || false;
+        document.getElementById('configSeed').value = savedConfig.seed || '';
+    }
+}
+
+function resetConfig(){
+    localStorage.removeItem('config');
+    loadConfig();
+}
+
+function getConfigValue(type){
+    var savedConfig = JSON.parse(localStorage.getItem('config'));
+    switch(type){
+        case "Diff":
+            return savedConfig ? parseFloat(savedConfig.difficulty) : 50; // Usar 50 como valor predeterminado
+        case "TotalFloor":
+            return savedConfig ? parseInt(savedConfig.gameCount) : TOTAL_PISOS; // Usar 100 como valor predeterminado
+        case "Skip":
+            return savedConfig ? parseInt(savedConfig.gameSkip) : 3;
+        case "Repeat":
+            return savedConfig ? savedConfig.allowRepetitions : false; // Repetición desactivada por defecto
+        case "Seed":
+            return savedConfig ? savedConfig.seed : null; // Seed puede ser null
     }
 }
 

@@ -40,6 +40,127 @@ img {
   display: none;
 }
 
+/* Sección de Instrucciones */
+#Section_Instruction {
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#Section_Instruction h2 {
+  font-size: 24px;
+  color: #f0f0f0;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#Section_Instruction p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ddd;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Botones dentro de la sección de instrucciones */
+#Section_Instruction button {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #666;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 6px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#Section_Instruction button:hover {
+  background-color: #666;
+  transform: scale(1.05);
+}
+
+/* Sección de Configuración */
+#Section_Config {
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#Section_Config h2 {
+  font-size: 24px;
+  color: #f0f0f0;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Elementos de las configuraciones (rango, números, checkbox) */
+#Section_Config div {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+#Section_Config label {
+  font-size: 16px;
+  color: #ccc;
+}
+
+#Section_Config input[type="range"], 
+#Section_Config input[type="number"], 
+#Section_Config input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  background-color: #333;
+  border: 1px solid #444;
+  color: #fff;
+  border-radius: 6px;
+}
+
+#Section_Config input[type="range"] {
+  background-color: #444;
+}
+
+#Section_Config input[type="range"]:focus {
+  outline: none;
+  border-color: #666;
+}
+
+#Section_Config #difficultyValue {
+  font-size: 16px;
+  color: #ddd;
+}
+
+#Section_Config input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-left: 10px;
+}
+
+/* Botones dentro de la sección de configuración */
+#Section_Config button {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #666;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 6px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#Section_Config button:hover {
+  background-color: #666;
+  transform: scale(1.05);
+}
+
+
 #Section_Challenge {
   max-width: 900px;
   margin: 30px auto;

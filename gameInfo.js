@@ -472,7 +472,8 @@ const GAME_DATA = [
     dificultad: 86.9,
     pisos: 100,
     imagen: "CN2.png",
-    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=15434"
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=15434",
+    descripcion: "El final boss no es necesario."
   },
   {
     nombre: "Crimson Needle 2.5",
@@ -909,7 +910,7 @@ const GAME_DATA = [
     pisos: 51,
     imagen: "QuirkyFloorGame.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=28091",
-    descripcion: "Spike Shoot Bruh no cuenta."
+    descripcion: "No se permite activar el Spike Shoot Bruh."
   },
   {
     nombre: "I Wanna be the Vandal",
