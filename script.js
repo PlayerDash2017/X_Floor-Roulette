@@ -1,19 +1,27 @@
 let gamesAvailable = [];
 let gameSelect = [];
 let progress = 0;
+let skips = 3;
 const TOTAL_PISOS = 100;
  
 //#region Elementos
 
 //Botones
 const btnStart = document.getElementById('btn_start');
+const btnIntruct = document.getElementById('btn_intruct');
+const btnConfig = document.getElementById('btn_config');
+
 const btnNext = document.getElementById('btn_next');
+const btnSkip = document.getElementById('btn_skip');
 const btnGiveUp = document.getElementById('btn_giveup');
 const btnRestart = document.querySelectorAll('#btn_restart, #btn_finish');
 
 //Section del challenge
-const chalIntro = document.getElementById('Challenge_Intro');
-const chalStart = document.getElementById('Challenge_Start');
+const introduction = document.getElementById('Presentation');
+const chalStart = document.getElementById('Section_Challenge');
+const instructMenu = document.getElementById('Section_Instruction')
+const configMenu = document.getElementById('Section_Config');
+
 const chalPassed = document.getElementById('Challenge_Passed');
 const chalCurrent = document.getElementById('Challenge_Current');
 const chalFailed = document.getElementById('Challenge_Failed');
@@ -36,25 +44,40 @@ const listFailed = document.getElementById('List_Failed');
 
 //#region Sistema aparte
 
-//Carga el progress
+//carga el progreso
 window.onload = () => {
-  const saved = JSON.parse(localStorage.getItem('reto-xfloor'));
-  if (saved && saved.juegos && saved.progreso < TOTAL_PISOS) {
-    gameSelect = saved.juegos;
-    progress = saved.progreso;
-    showGame();
-  }
+    const saved = JSON.parse(localStorage.getItem('reto-xfloor'));
+    if (saved && saved.juegos && saved.progreso < TOTAL_PISOS) {
+        gameSelect = saved.juegos;
+        progress = saved.progreso;
+        skips = saved.skips;
+        btnSkip.textContent = `Cambiar juego (${skips})`;
+        showGame();
+    }
 };
 
+//En caso de que una imagen no se haya cargado
 document.addEventListener('error', function (e) {
-  if (e.target.tagName.toLowerCase() === 'img') {
-    e.target.src = 'img/NoFound.png'; // imagen de respaldo
-  }
+    if (e.target.tagName.toLowerCase() === 'img') {
+      e.target.src = 'img/NoFound.png';
+    }
 }, true);
 
 //#endregion
 
 //#region Botones
+
+//Leer instrucciones
+btnIntruct.addEventListener('click', async () => {
+    instructMenu.classList.remove('hidden');
+    configMenu.classList.add('hidden');
+});
+
+//Configurar el reto
+btnConfig.addEventListener('click', async () => {
+    configMenu.classList.remove('hidden');
+    instructMenu.classList.add('hidden');
+});
 
 //Empezar reto
 btnStart.addEventListener('click', async () => {
@@ -75,8 +98,12 @@ btnStart.addEventListener('click', async () => {
         const elegido = posibles[Math.floor(Math.random() * posibles.length)];
         gameUsed.add(elegido.nombre);
         gameSelect.push({ ...elegido, piso });
+
+        print(posibles.length);
     }
 
+    btnSkip.textContent = "Cambiar juego (3)";
+    skips = 3;
     progress = 0;
     saveProgress();
     showGame();
@@ -85,6 +112,7 @@ btnStart.addEventListener('click', async () => {
 //Siguiente juego
 btnNext.addEventListener('click', () => {
     progress++;
+
     if (progress >= TOTAL_PISOS) {
         localStorage.removeItem('reto-xfloor');
         showPassedGames();
@@ -93,6 +121,42 @@ btnNext.addEventListener('click', () => {
         saveProgress();
         showGame();
     }
+
+     window.scrollTo(0, document.body.scrollHeight);
+});
+
+//Cambiar de juego
+btnSkip.addEventListener('click', () => {
+    if (skips <= 0){
+        alert("Ya no puedes volver a cambiar de juego.")
+        return;
+    }
+
+    skips --;
+
+    const pisoActual = gameSelect[progress].piso;
+    const gameUsed = new Set(gameSelect.map(j => j.nombre)); 
+    gameUsed.delete(gameSelect[progress].nombre); // Permitimos quitar el actual para cambiarlo
+
+    const posibles = gamesAvailable.filter(j => 
+        j.pisos >= pisoActual &&
+        !gameUsed.has(j.nombre) &&
+        validateGame(j.nombre, pisoActual)
+    );
+
+    if (posibles.length === 0) {
+        alert("No hay juegos disponibles para reemplazar este piso.");
+        return;
+    }
+
+    const _confirm = confirm("¿Seguro que quieres cambiar de juego?.");
+    if (!_confirm) return;
+
+    const elegido = posibles[Math.floor(Math.random() * posibles.length)];
+    gameSelect[progress] = { ...elegido, piso: pisoActual };
+    btnSkip.textContent = `Cambiar juego (${skips})`;
+    saveProgress();
+    showGame();
 });
 
 //Rendir
@@ -100,7 +164,7 @@ btnGiveUp.addEventListener('click', () => {
     showGiveUp();
 });
 
-//Reitentar el reto
+//Reintentar el reto
 btnRestart.forEach(btn => {
   btn.addEventListener('click', () => {
     localStorage.removeItem('reto-xfloor');
@@ -112,8 +176,15 @@ btnRestart.forEach(btn => {
 
 //#region Functions
 
+function print(text){
+    console.log(text);
+}
+
 function showGame() {//mostrar juego
-    chalIntro.classList.add('hidden');
+    introduction.classList.add('hidden');
+    configMenu.classList.add('hidden');
+    instructMenu.classList.add('hidden');
+
     chalStart.classList.remove('hidden');
     chalFailed.classList.add('hidden');
     chalFinish.classList.add('hidden');
@@ -137,6 +208,9 @@ function showGame() {//mostrar juego
 }
 
 function showGiveUp() {//rendirte
+    const _confirm = confirm("¿Seguro que quieres rendirte?.");
+    if (!_confirm) return;
+
     chalCurrent.classList.add('hidden');
     chalFailed.classList.remove('hidden');
 
@@ -162,37 +236,38 @@ function showGiveUp() {//rendirte
 }
 
 function showFinished() {//terminar
-  chalCurrent.classList.add('hidden');
-  chalFinish.classList.remove('hidden');
+    chalCurrent.classList.add('hidden');
+    chalFinish.classList.remove('hidden');
 }
 
 function saveProgress() {//guardar progreso
-  localStorage.setItem('reto-xfloor', JSON.stringify({
-    juegos: gameSelect,
-    progreso: progress
-  }));
+    localStorage.setItem('reto-xfloor', JSON.stringify({
+        juegos: gameSelect,
+        progreso: progress,
+        skips: skips
+    }));
 }
 
 function showPassedGames() {//mostrar juegos pasados
-  const passedList = document.getElementById('List_Passed');
-  passedList.innerHTML = '';
+    const passedList = document.getElementById('List_Passed');
+    passedList.innerHTML = '';
 
-  for (let i = 0; i < progress; i++) {
-    const juego = gameSelect[i];
-    const li = document.createElement('li');
+    for (let i = 0; i < progress; i++) {
+        const juego = gameSelect[i];
+        const li = document.createElement('li');
 
-    li.innerHTML = `
-        <div class="Game_Entry Passed">
-            <img src="img/${juego.imagen}" alt="${juego.imagen}" />
-            <div class="Game_Info">
-                <h3>${juego.nombre}</h3>
-                <p><strong>Dificultad:</strong> ${juego.dificultad.toFixed(1)}</p>
-                <p><strong>Piso:</strong> ${juego.piso}</p>
+        li.innerHTML = `
+            <div class="Game_Entry Passed">
+                <img src="img/${juego.imagen}" alt="${juego.imagen}" />
+                <div class="Game_Info">
+                    <h3>${juego.nombre}</h3>
+                    <p><strong>Dificultad:</strong> ${juego.dificultad.toFixed(1)}</p>
+                    <p><strong>Piso:</strong> ${juego.piso}</p>
+                </div>
             </div>
-        </div>
-    `;
-    passedList.appendChild(li);
-  }
+        `;
+        passedList.appendChild(li);
+    }
 }
 
 function validateGame(game, floor) {//Validacion del juego

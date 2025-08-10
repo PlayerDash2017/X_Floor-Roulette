@@ -596,6 +596,20 @@ const GAME_DATA = [
     imagen: "ReverseGravity.png",
     descarga: "https://archive.dappermink.me/game/5f61fce"
   },
+  {
+    nombre: "I Wanna Be A Good Learner",
+    dificultad: 70.0,
+    pisos: 100,
+    imagen: "GoodLearner.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=23430"
+  },
+  {
+    nombre: "I wanna be the Alternative",
+    dificultad: 44.5,
+    pisos: 100,
+    imagen: "Alternative.png",
+    descarga: "https://archive.dappermink.me/game/5f60eb1"
+  },
   //#endregion
   //#region 50 Floor games
   {
@@ -778,7 +792,7 @@ const GAME_DATA = [
   {
     nombre: "I wanna conquer the 100 Trials",
     dificultad: 58.0,
-    pisos: 50,
+    pisos: 49,
     imagen: "Conquer100Trials.png",
     descarga: "https://archive.dappermink.me/game/5f62198"
   },
@@ -903,8 +917,41 @@ const GAME_DATA = [
     pisos: 49,
     imagen: "Vandal.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=21244"
+  },
+  {
+    nombre: "I wanna end the PTSD",
+    dificultad: 66.1,
+    pisos: 30,
+    imagen: "EndPTSD.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=20366"
+  },
+  {
+    nombre: "I Wanna be the PTSD",
+    dificultad: 65.7,
+    pisos: 50,
+    imagen: "PTSD.png",
+    descarga: "https://www.mediafire.com/file/m3r0e23i5idwjl0"
+  },
+  {
+    nombre: "I Wanna WandWandWand",
+    dificultad: 39.0,
+    pisos: 24,
+    imagen: "Wand.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=24309"
+  },
+  {
+    nombre: "I Wanna CashCashCash",
+    dificultad: 39.0,
+    pisos: 45,
+    imagen: "Cash.png",
+    descarga: "https://www.mediafire.com/file/2it12w1t2kpc7pa/I+Wanna+CashCashCash.zip"
+  },
+  {
+    nombre: "I wanna clear 25 floors",
+    dificultad: 25.5,
+    pisos: 24,
+    imagen: "Clear50Floor.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=25139"
   }
   //#endregion
 ];
-
-console.log(GAME_DATA.length);

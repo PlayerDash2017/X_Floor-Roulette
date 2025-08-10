@@ -40,12 +40,18 @@ img {
   display: none;
 }
 
-.Section_Challenge {
+#Section_Challenge {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
+
+/*.Section_Challenge {
   margin-top: 30px;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
-}
+}*/
 
 /* Listas de juegos */
 #List_Passed,

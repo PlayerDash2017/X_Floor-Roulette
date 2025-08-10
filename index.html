@@ -11,61 +11,83 @@
         <h1>IWBTG X_Floor Roulette</h1>
     </header>
     <main>
-        <!-- El reto -->
-        <section class="Section_Challenge">
-
-            <div id="Challenge_Intro" class="classChalIntro">
+        <!-- Introduccion a la pagina -->
+        <section id="Presentation">
+            <div id="Button_Intruction">
+                <p>Presiona el botón para leer las instrucciones del reto.</p>
+                <button id="btn_intruct">Leer instrucciones</button>
+            </div>
+            <div id="Button_Start">
                 <p>Presiona el botón para iniciar el reto de los 100 pisos.</p>
                 <button id="btn_start">Iniciar reto</button>
             </div>
+            <div id="Button_Config">
+                <p>Presiona el botón para configurar algunas cosas.</p>
+                <button id="btn_config">Configurar reto</button>
+            </div>
+        </section>
 
-            <!-- Empezar el reto -->
-            <div id="Challenge_Start" class="hidden">
+        <section id="Section_Instruction" class="hidden">
+            <h2>Instrucciones para el reto.</h2>
+            <p>Bienvenido al X_Floor Roulette, un reto inspirado en el Extreme Demon Roulette del Geometry Dash<br>
+              En el que deberas superar 100 Fangames de x floor.<br><br>
+              Instrucciones:<br>
+              1.- Para avanzar en el reto, deberas llegar y superar el piso asignado.<br>
+              2.- Para todos los juegos, deberas hacer una nueva partida, no se permite utilizar un save ya existente.<br>
+              3.- Se permite el uso del Play Online, tanto en Race Mode como tambien en Compartir Save.<br>
+              4.- Buena suerte!
+            </p>
+        </section>
 
-                <!-- Juegos superados -->
-                <div id="Challenge_Passed">
-                    <h2>Juegos Superados</h2>
-                    <ul id="List_Passed"></ul>
+        <section id="Section_Config" class="hidden">
+            <h2>Este es el menu de configuraciones.</h2>
+            <p>254 haha</p>
+        </section>
+
+        <section id="Section_Challenge" class="hidden">
+            <!-- Juegos superados -->
+            <div id="Challenge_Passed">
+                <h2>Juegos Superados</h2>
+                <ul id="List_Passed"></ul>
+            </div>
+
+            <!-- Juego actual -->
+            <div id="Challenge_Current">
+                <div id="Game_Info">
+                    <h2 id="Game_Title"></h2>
+
+                    <img id="Game_Image" src="" alt="Imagen del juego"/>
+
+                    <p><strong>Dificultad:</strong> <span id="Game_Diff"></span></p>
+                    <p><strong>Piso a superar:</strong> <span id="Game_Floor"></span></p>
+                    <p><span id="Game_Desc"></span></p>
+
+                    <a id="Game_Download" href="#" target="_blank">Download game</a>
                 </div>
 
-                <!-- Juego actual -->
-                <div id="Challenge_Current">
-                    <div id="Game_Info">
-                        <h2 id="Game_Title"></h2>
-
-                        <img id="Game_Image" src="" alt="Imagen del juego"/>
-
-                        <p><strong>Dificultad:</strong> <span id="Game_Diff"></span></p>
-                        <p><strong>Piso a superar:</strong> <span id="Game_Floor"></span></p>
-                        <p><span id="Game_Desc"></span></p>
-
-                        <a id="Game_Download" href="#" target="_blank">Download game</a>
-                    </div>
-
-                    <div id="Game_Buttons">
-                        <button id="btn_next">Siguiente juego</button>
-                        <button id="btn_skip">Cambiar juego</button>
-                        <button id="btn_giveup">Rendirse</button>
-                    </div>
+                <div id="Game_Buttons">
+                    <button id="btn_next">Siguiente juego</button>
+                    <button id="btn_skip">Cambiar juego</button>
+                    <button id="btn_giveup">Rendirse</button>
                 </div>
+            </div>
                 
-                <!-- Juegos no superado -->
-                <div id="Challenge_Failed">
-                    <h2>Te has rendido 😢</h2>
-                    <p>Estos son los juegos que te habrían tocado:</p>
+            <!-- Juegos no superado -->
+            <div id="Challenge_Failed">
+                <h2>Te has rendido 😢</h2>
+                <p>Estos son los juegos que te habrían tocado:</p>
 
-                    <ul id="List_Failed"></ul>
+                <ul id="List_Failed"></ul>
 
-                    <button id="btn_restart">Reiniciar reto</button>
-                </div>
+                <button id="btn_restart">Reiniciar reto</button>
+            </div>
 
-                <!-- Reto completado -->
-                <div id="Challenge_Finish">
-                    <h2>¡Felicidades! 🎉</h2>
-                    <p>Completaste los 100 pisos del reto.</p>
+            <!-- Reto completado -->
+            <div id="Challenge_Finish">
+                <h2>¡Felicidades! 🎉</h2>
+                <p>Completaste los 100 pisos del reto.</p>
 
-                    <button id="btn_finish">Reiniciar reto</button>
-                </div>
+                <button id="btn_finish">Reiniciar reto</button>
             </div>
         </section>
     </main>
