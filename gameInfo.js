@@ -704,6 +704,13 @@ const GAME_DATA = [
     imagen: "DaDanDan.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=23682"
   },
+  {
+    nombre: "I wanna be the Math Major 2",
+    dificultad: 45.0,
+    pisos: 50,
+    imagen: "Math2.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=20362"
+  },
   //#endregion
   //#region X Floor games
   {
@@ -953,6 +960,20 @@ const GAME_DATA = [
     pisos: 24,
     imagen: "Clear50Floor.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=25139"
+  },
+  {
+    nombre: "I Wanna Be The Windy Quiz 2!",
+    dificultad: 56.1,
+    pisos: 12,
+    imagen: "WindyQuiz2.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=22574"
+  },
+  {
+    nombre: "I Wanna A Puzzle Game For Beginner",
+    dificultad: 18.0,
+    pisos: 20,
+    imagen: "PGFB.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=23212"
   }
   //#endregion
 ];

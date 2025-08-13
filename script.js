@@ -56,8 +56,6 @@ window.onload = () => {
     }
 
     loadConfig();
-
-    print(gameSelect.length)
 };
 
 //En caso de que una imagen no se haya cargado
@@ -70,6 +68,18 @@ document.addEventListener('error', function (e) {
 document.addEventListener('DOMContentLoaded', () => {
     // Cargar configuraciones guardadas si existen
     loadConfig();
+
+    var btnConfigRange = document.getElementById("configCount");
+    btnConfigRange.addEventListener("input", () => {
+        var min = parseInt(btnConfigRange.min);
+        var max = parseInt(btnConfigRange.max);
+        var valor = parseInt(btnConfigRange.value);
+
+        if (isNaN(valor)) return; // Si no hay valor válido, no hace nada
+        
+        if (valor < min) btnConfigRange.value = min;
+        if (valor > max) btnConfigRange.value = max;
+    });
 
     // Guardar configuración
     document.getElementById('btnSaveConfig').addEventListener('click', () => {
@@ -226,6 +236,10 @@ function print(text){
     console.log(text);
 }
 
+function clamp(Num,Min,Max){
+    Math.min(Math.max(Num, Min), Max);
+}
+
 function showGame() {//mostrar juego
     introduction.classList.add('hidden');
     configMenu.classList.add('hidden');
@@ -321,7 +335,7 @@ function loadConfig() {
     const savedConfig = JSON.parse(localStorage.getItem('config'));
 
     if (savedConfig) {
-        document.getElementById('configDiff').value = savedConfig.difficulty || 50;
+        document.getElementById('configDiff').value = savedConfig.difficulty || 0;
         document.getElementById('configCount').value = savedConfig.gameCount || 100;
         document.getElementById('configSkip').value = savedConfig.gameSkip || 3;
         document.getElementById('configRepeat').checked = savedConfig.allowRepetitions || false;
@@ -338,7 +352,7 @@ function getConfigValue(type){
     var savedConfig = JSON.parse(localStorage.getItem('config'));
     switch(type){
         case "Diff":
-            return savedConfig ? parseFloat(savedConfig.difficulty) : 50; // Usar 50 como valor predeterminado
+            return savedConfig ? parseFloat(savedConfig.difficulty) : 0; // Usar 50 como valor predeterminado
         case "TotalFloor":
             return savedConfig ? parseInt(savedConfig.gameCount) : TOTAL_PISOS; // Usar 100 como valor predeterminado
         case "Skip":
