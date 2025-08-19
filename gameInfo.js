@@ -560,7 +560,7 @@ const GAME_DATA = [
     pisos: 100,//1f-31, 70f-100f
     imagen: "CN3.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=20889",
-    descripcion: "Para llegar el piso 90 deberas conseguir los secretos del piso 31."
+    descripcion: "Para llegar el piso 91 deberas conseguir los secretos del piso 31."
   },
   {
     nombre: "I wanna find the fine time",
@@ -710,6 +710,14 @@ const GAME_DATA = [
     pisos: 50,
     imagen: "Math2.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=20362"
+  },
+  {
+    nombre: "dono challenge pack",
+    dificultad: 68.3,
+    pisos: 50,
+    imagen: "DonoPack.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=23801",
+    descripcion: "Entra el stage de Skuldafn, el boss final del stage no es necesario."
   },
   //#endregion
   //#region X Floor games
@@ -974,6 +982,13 @@ const GAME_DATA = [
     pisos: 20,
     imagen: "PGFB.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=23212"
+  },
+  {
+    nombre: "I wanna find a Needle in a Haystack",
+    dificultad: 81.7,
+    pisos: 80,
+    imagen: "Haystack.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=15466"
   }
   //#endregion
 ];

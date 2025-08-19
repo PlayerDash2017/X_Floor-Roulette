@@ -368,6 +368,8 @@ function validateGame(game, floor) {//Validacion del juego
     switch(game){
         case "Crimson Needle 3":
             return !(floor > 31 && floor < 70);
+        case "I wanna find a Needle in a Haystack":
+            return (floor <= 24 || floor == 80);
         case "I wanna find a Needle in a Haystack 2":
             return (floor >= 25 && floor <= 51);
         default:
