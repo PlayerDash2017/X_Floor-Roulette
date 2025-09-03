@@ -434,7 +434,7 @@ const GAME_DATA = [
   {
     nombre: "Flames Needle",
     dificultad: 74.3,
-    pisos: 100,
+    pisos: 80,
     imagen: "Flames.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=18856"
   },
@@ -586,7 +586,7 @@ const GAME_DATA = [
   {
     nombre: "Flames Needle Remastered",
     dificultad: 82.4,
-    pisos: 100,
+    pisos: 80,
     imagen: "FlamesRemake.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=28147"
   },
@@ -618,7 +618,8 @@ const GAME_DATA = [
     dificultad: 32.6,
     pisos: 50,
     imagen: "OverlapLeaf.png",
-    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=11662"
+    descarga: "https://f005.backblazeb2.com/file/fangame-archive/I%20wanna%20Overlap%20the%20Leaf.zip",
+    descripcion: "Impossible es la dificultad mas facil, enserio."
   },
   {
     nombre: "I wanna be the Fight3",
@@ -717,7 +718,7 @@ const GAME_DATA = [
     pisos: 50,
     imagen: "DonoPack.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=23801",
-    descripcion: "Entra el stage de Skuldafn, el boss final del stage no es necesario."
+    descripcion: "Entra al stage de Skuldafn, el boss final del stage no es necesario."
   },
   //#endregion
   //#region X Floor games
@@ -889,7 +890,7 @@ const GAME_DATA = [
     dificultad: 62.3,
     pisos: 25,
     imagen: "AvoidCherry.png",
-    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=16243"
+    descarga: "https://www.iwannawiki.com/games/438"
   },
   {
     nombre: "I Wanna Be The Strongest Fairy",
@@ -989,6 +990,13 @@ const GAME_DATA = [
     pisos: 80,
     imagen: "Haystack.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=15466"
+  },
+  {
+    nombre: "I wanna beat the Spikes 6",
+    dificultad: 86.3,
+    pisos: 12,
+    imagen: "BeatSpikes6.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=12231"
   }
   //#endregion
 ];

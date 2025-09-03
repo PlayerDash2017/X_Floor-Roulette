@@ -151,7 +151,7 @@ btnStart.addEventListener('click', async () => {
         gameSelect.push({ ...elegido, piso });
     }
 
-    skips = getConfigValue("Skip")
+    skips = getConfigValue("Skip");
     btnSkip.textContent = `Cambiar juego (${skips})`;
     
     progress = 0;
@@ -241,7 +241,11 @@ function clamp(Num,Min,Max){
 }
 
 function showGame() {//mostrar juego
-    introduction.classList.add('hidden');
+    //introduction.classList.add('hidden');
+    if (introduction) {
+        introduction.remove();
+    }
+
     configMenu.classList.add('hidden');
     instructMenu.classList.add('hidden');
 
@@ -265,6 +269,7 @@ function showGame() {//mostrar juego
     }
 
     showPassedGames();
+    updateProgress();
 }
 
 function showGiveUp() {//rendirte
@@ -330,7 +335,6 @@ function showPassedGames() {//mostrar juegos pasados
     }
 }
 
-// Función para cargar configuraciones guardadas
 function loadConfig() {
     const savedConfig = JSON.parse(localStorage.getItem('config'));
 
@@ -352,19 +356,29 @@ function getConfigValue(type){
     var savedConfig = JSON.parse(localStorage.getItem('config'));
     switch(type){
         case "Diff":
-            return savedConfig ? parseFloat(savedConfig.difficulty) : 0; // Usar 50 como valor predeterminado
+            return savedConfig ? parseFloat(savedConfig.difficulty) : 0;
         case "TotalFloor":
-            return savedConfig ? parseInt(savedConfig.gameCount) : TOTAL_PISOS; // Usar 100 como valor predeterminado
+            return savedConfig ? parseInt(savedConfig.gameCount) : TOTAL_PISOS;
         case "Skip":
             return savedConfig ? parseInt(savedConfig.gameSkip) : 3;
         case "Repeat":
-            return savedConfig ? savedConfig.allowRepetitions : false; // Repetición desactivada por defecto
+            return savedConfig ? savedConfig.allowRepetitions : false;
         case "Seed":
-            return savedConfig ? savedConfig.seed : null; // Seed puede ser null
+            return savedConfig ? savedConfig.seed : null;
     }
 }
 
-function validateGame(game, floor) {//Validacion del juego
+function updateProgress() {
+    var totalFloors = getConfigValue("TotalFloor");
+    var currentFloor = progress;
+
+    var percentage = Math.round((currentFloor / totalFloors) * 100);
+    var progressText = `Pisos superados: ${currentFloor} / ${totalFloors} (${percentage}%)`;
+
+    document.getElementById('Game_Progress').textContent = progressText;
+}
+
+function validateGame(game,floor) {//Validacion del juego
     switch(game){
         case "Crimson Needle 3":
             return !(floor > 31 && floor < 70);

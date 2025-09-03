@@ -1,51 +1,39 @@
-
 # X_Floor Roulette
 
-- **Maker:** PlayerDash2017
-- **Inspiration:** Extreme Demon Roulette
-- **Tool:** Visual Studio Code
-
-Una versión adaptada del concepto **Extreme Demon Roulette** de Geometry Dash, pero para los fangames de **I Wanna Be The Guy** con el tag `x_floor` (juegos de x pisos).  
-El reto consiste en superar **100 juegos**, avanzando piso por piso en orden creciente.
+**Maker:** PlayerDash2017  
+**Discord:** PlayerDash2017#4926  
+**Inspiración:** Extreme Demon Roulette  
+**Herramientas:** Visual Studio Code, ChatGPT  
 
 ---
 
-## 🎯 Cómo funciona
-1. Presiona **"Iniciar reto"** para comenzar.
-2. El sistema genera una lista aleatoria de juegos desde la base de datos (sin repeticiones).
-3. En cada juego se te asignará un **piso objetivo** que debes alcanzar y superar.
-4. Al completar un piso, avanza al siguiente juego con el botón **"Siguiente"**.
-5. Si decides rendirte, puedes ver:
-   - Los juegos que ya completaste (marcados en verde).
-   - Los juegos que quedaban por jugar (marcados en rojo).
-6. El reto termina al superar el piso 100 o al rendirte.
+## ¿Qué es X_Floor Roulette?
+
+Un reto inspirado en el *Extreme Demon Roulette* del Geometry Dash pero adaptado a los fangames.  
+El objetivo es superar 100 fangames del tag `x_floor`.  
+La idea es ir alcanzando un piso específico en cada juego para luego cambiar al siguiente, y así sucesivamente hasta completar los 100 pisos.
 
 ---
 
-## 📂 Datos de los juegos
-Cada juego incluye:
-- **Nombre**
-- **Dificultad** (0–100, con decimales)
-- **Número total de pisos**
-- **Imagen** (pantalla de título)
-- **Link de descarga**
-- **Descripción o consejos específicos para el juego** (Depende del juego)
+## Cómo funciona
 
-Algunos juegos tienen reglas especiales para los pisos válidos, por ejemplo:
-- **Crimson Needle 3**: No se juegan pisos entre 32 y 69.
-- **I Wanna find a Needle in a Haystack 2**: Solo incluye pisos entre 25 y 51.
+1. Al iniciar el reto, se mostrará el juego y el piso que debes superar.  
+2. Una vez que superes el piso, presiona el botón **Siguiente** para recibir el siguiente juego y piso a superar.  
+3. Cuando completes los 100 juegos, el reto finalizará.  
+4. Hay un botón **Skip** que te permite cambiar de juego, pero su uso es limitado.  
+5. Si decides rendirte, al presionar el botón **Rendir**, verás la lista de juegos que te habrían salido.  
+6. Antes de empezar, puedes configurar opciones como el número de juegos o la cantidad de skips disponibles.  
+7. La página guarda automáticamente tu progreso.
 
 ---
 
-## 💾 Guardado de progreso
-- El progreso se guarda automáticamente en el navegador usando **localStorage**.
-- Si recargas la página, podrás continuar desde donde estabas.
-- El botón **"Reiniciar reto"** permite comenzar desde cero.
+## Reglas del reto
+
+1. Para avanzar, debes llegar y superar el piso asignado en cada juego.  
+2. Se considera piso superado si guardas en la siguiente sala o si completas el juego.  
+3. Para todos los juegos, debes iniciar una partida nueva; **no está permitido usar partidas guardadas previamente**.  
+4. Se permite el uso de *Play Online*, tanto en modo Race como en Compartir Save.
 
 ---
 
-## 🛠️ Tecnologías usadas
-- **HTML5** para la estructura.
-- **CSS3** para el diseño minimalista.
-- **JavaScript** para la lógica del reto y manejo de datos.
-- **localStorage** para persistencia local.
+## ¡Buena suerte!
