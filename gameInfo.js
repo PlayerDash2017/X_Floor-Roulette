@@ -195,7 +195,8 @@ const GAME_DATA = [
     dificultad: 40.5,
     pisos: 100,
     imagen: "100Times.png",
-    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=26462"
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=26462",
+    descripcion: "El juego viene en un instalador. wtf"
   },
   {
     nombre: "I wanna celebrate 100",
@@ -308,6 +309,13 @@ const GAME_DATA = [
     pisos: 100,
     imagen: "HolyTower.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=28110"
+  },
+  {
+    nombre: "I wanna be the Alternative",
+    dificultad: 44.5,
+    pisos: 100,
+    imagen: "Alternative.png",
+    descarga: "https://archive.dappermink.me/game/5f60eb1"
   },
   //#endregion
   //#region Difficulty 100 Floors game
@@ -604,13 +612,6 @@ const GAME_DATA = [
     imagen: "GoodLearner.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=23430"
   },
-  {
-    nombre: "I wanna be the Alternative",
-    dificultad: 44.5,
-    pisos: 100,
-    imagen: "Alternative.png",
-    descarga: "https://archive.dappermink.me/game/5f60eb1"
-  },
   //#endregion
   //#region 50 Floor games
   {
@@ -720,6 +721,48 @@ const GAME_DATA = [
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=23801",
     descripcion: "Entra al stage de Skuldafn, el boss final del stage no es necesario."
   },
+  {
+    nombre: "I wanna be the Partysu III",
+    dificultad: 75.3,
+    pisos: 49,
+    imagen: "PartysuIII.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=18299",
+  },
+  {
+    nombre: "I wanna break the silence",
+    dificultad: 50.0,
+    pisos: 50,
+    imagen: "BreakSilence.png",
+    descarga: "https://archive.dappermink.me/game/5f61faa",
+  },
+  {
+    nombre: "I wanna break the silence 2",
+    dificultad: 50.1,
+    pisos: 50,
+    imagen: "BreakSilence2.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=20597",
+  },
+  {
+    nombre: "I wanna break the silence 3",
+    dificultad: 55.6,
+    pisos: 50,
+    imagen: "BreakSilence3.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=20994",
+  },
+  {
+    nombre: "I wanna SNTF",
+    dificultad: 61.1,
+    pisos: 50,
+    imagen: "SNTF.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=22972"
+  },
+  {
+    nombre: "2022 Needle.",
+    dificultad: 68.6,
+    pisos: 50,
+    imagen: "2022Needle.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=25262"
+  },
   //#endregion
   //#region X Floor games
   {
@@ -811,7 +854,7 @@ const GAME_DATA = [
     dificultad: 58.0,
     pisos: 49,
     imagen: "Conquer100Trials.png",
-    descarga: "https://archive.dappermink.me/game/5f62198"
+    descarga: "https://www.mediafire.com/file/ae81pfvk5v9qupg"
   },
   {
     nombre: "New Year's needle game",
@@ -997,6 +1040,35 @@ const GAME_DATA = [
     pisos: 12,
     imagen: "BeatSpikes6.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=12231"
+  },
+  {
+    nombre: "I Wanna Be The Shine Needle",
+    dificultad: 54.6,
+    pisos: 30,
+    imagen: "ShineNeedle.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=22854"
+  },
+  {
+    nombre: "I wanna be the Breather",
+    dificultad: 52.6,
+    pisos: 30,
+    imagen: "Breather.png",
+    descarga: "https://delicious-fruit.com/ratings/screenshot.php?id=3343",
+    descripcion: "El final boss no es necesario."
+  },
+  {
+    nombre: "Not Another Tower Game",
+    dificultad: 59.8,
+    pisos: 1000,
+    imagen: "NATG.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=26263"
+  },
+  {
+    nombre: "I wanna try the 114514 needles",
+    dificultad: 53.4,
+    pisos: 114514,
+    imagen: "114514Needles.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=19440"
   }
   //#endregion
 ];

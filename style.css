@@ -293,4 +293,5 @@ img {
   z-index: 1000;
   font-family: Arial, sans-serif;
   border: 1px solid #444;
+  pointer-events: none;
 }

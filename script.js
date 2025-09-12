@@ -205,7 +205,7 @@ btnSkip.addEventListener('click', () => {
     const _confirm = confirm("¿Seguro que quieres cambiar de juego?");
     if (!_confirm) return;
 
-    skips--;
+    skips --;
     const elegido = posibles[Math.floor(Math.random() * posibles.length)];
 
     gameSelect[progress] = { ...elegido, piso: pisoActual };
@@ -373,7 +373,7 @@ function updateProgress() {
     var currentFloor = progress;
 
     var percentage = Math.round((currentFloor / totalFloors) * 100);
-    var progressText = `Pisos superados: ${currentFloor} / ${totalFloors} (${percentage}%)`;
+    var progressText = `Juegos superados: ${currentFloor} / ${totalFloors} (${percentage}%)`;
 
     document.getElementById('Game_Progress').textContent = progressText;
 }

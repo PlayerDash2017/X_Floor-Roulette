@@ -30,7 +30,7 @@ La idea es ir alcanzando un piso específico en cada juego para luego cambiar al
 ## Reglas del reto
 
 1. Para avanzar, debes llegar y superar el piso asignado en cada juego.  
-2. Se considera piso superado si guardas en la siguiente sala o si completas el juego.  
+2. Se considera piso superado si guardas en la siguiente sala, y si el juego no tiene save, simplemente cuenta cuando superas la sala.
 3. Para todos los juegos, debes iniciar una partida nueva; **no está permitido usar partidas guardadas previamente**.  
 4. Se permite el uso de *Play Online*, tanto en modo Race como en Compartir Save.
 
