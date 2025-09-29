@@ -295,13 +295,14 @@ img {
   border: 1px solid #444;
   pointer-events: none;
   display: flex;
-  flex-direction: column; /* Alinea los spans en columna */
-  justify-content: space-between; /* Distribuye el espacio entre los spans */
-  height: 45px; /* Ajusta el alto del contenedor para que se vea bien */
+  flex-direction: column;
+  justify-content: space-between;
+  height: 45px;
 }
 
+/*no entiendo por que github esto no lo guardo?*/
 #Game_Progress, #Game_Seed {
-  margin: 0; /* Elimina márgenes por defecto */
+  margin: 0;
 }
 
 
