@@ -51,6 +51,7 @@ window.onload = () => {
         gameSelect = saved.juegos;
         progress = saved.progreso;
         skips = saved.skips;
+        gameSeed = saved.semilla;
         btnSkip.textContent = `Cambiar juego (${skips})`;
         showGame();
     }
@@ -131,10 +132,10 @@ btnStart.addEventListener('click', async () => {
     gameSelect = [];
     let gameUsed = new Set();
 
-    // Si se proporciona una seed, usarla para la aleatorización
+    //Configuracion de la seed
     var _seed = getConfigValue("Seed");
-    if (_seed)
-        { Math.seedrandom(_seed); } // Usar una librería de seedrandom para generar números aleatorios consistentes
+    gameSeed = Boolean(_seed) ? _seed.toString() : Math.round(Date.now()).toString();
+    Math.seedrandom(gameSeed);
 
     for (let piso = 1; piso <= getConfigValue("TotalFloor"); piso++) {
         const posibles = gamesAvailable.filter(j => 
@@ -309,7 +310,8 @@ function saveProgress() {//guardar progreso
     localStorage.setItem('reto-xfloor', JSON.stringify({
         juegos: gameSelect,
         progreso: progress,
-        skips: skips
+        skips: skips,
+        semilla: gameSeed
     }));
 }
 
@@ -376,6 +378,8 @@ function updateProgress() {
     var progressText = `Juegos superados: ${currentFloor} / ${totalFloors} (${percentage}%)`;
 
     document.getElementById('Game_Progress').textContent = progressText;
+
+    document.getElementById('Game_Seed').textContent = `Seed: ${gameSeed}`;
 }
 
 function validateGame(game,floor) {//Validacion del juego

@@ -281,7 +281,31 @@ img {
   transform: scale(1.03);
 }
 
-#Game_Progress {
+#Hud_Info {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  z-index: 1000;
+  font-family: Arial, sans-serif;
+  border: 1px solid #444;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column; /* Alinea los spans en columna */
+  justify-content: space-between; /* Distribuye el espacio entre los spans */
+  height: 45px; /* Ajusta el alto del contenedor para que se vea bien */
+}
+
+#Game_Progress, #Game_Seed {
+  margin: 0; /* Elimina márgenes por defecto */
+}
+
+
+/*#Game_Progress {
   position: fixed;
   bottom: 10px;
   left: 10px;

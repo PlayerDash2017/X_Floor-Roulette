@@ -763,6 +763,20 @@ const GAME_DATA = [
     imagen: "2022Needle.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=25262"
   },
+  {
+    nombre: "I wanna all VOIRO end over 2",
+    dificultad: 32.4,
+    pisos: 50,
+    imagen: "VoiroEnd2.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=22768"
+  },
+  {
+    nombre: "Dadu Needle",
+    dificultad: 76.3,
+    pisos: 50,
+    imagen: "DaduNeedle.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=21606"
+  },
   //#endregion
   //#region X Floor games
   {
@@ -1069,6 +1083,21 @@ const GAME_DATA = [
     pisos: 114514,
     imagen: "114514Needles.png",
     descarga: "https://delicious-fruit.com/ratings/game_details.php?id=19440"
+  },
+  {
+    nombre: "I wanna be the Timeattacker!",
+    dificultad: 60.0,
+    pisos: 39,
+    imagen: "Timeattacker.png",
+    descarga: "https://archive.dappermink.me/game/5f60b66",
+    descripcion: "Los numeros de pisos son los bloques que forman el numero."
+  },
+  {
+    nombre: "Touch Grass Needle",
+    dificultad: 62.5,
+    pisos: 25,
+    imagen: "TouchGrass.png",
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=27233"
   }
   //#endregion
 ];
