@@ -366,7 +366,7 @@ const GAME_DATA = [
     dificultad: 68.7,
     pisos: 100,
     imagen: "Best100Floors.png",
-    descarga: "https://delicious-fruit.com/ratings/screenshot.php?id=17861"
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=21381"
   },
   {
     nombre: "I Wanna Soothe the Shroom",
@@ -575,7 +575,7 @@ const GAME_DATA = [
     dificultad: 70.5,
     pisos: 100,
     imagen: "FineTime.png",
-    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=20889"
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=16259"
   },
   {
     nombre: "I wanna go 100 Layers Downstair",
@@ -954,7 +954,7 @@ const GAME_DATA = [
     dificultad: 26.8,
     pisos: 9,
     imagen: "StrongestFairy.png",
-    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=16243"
+    descarga: "https://delicious-fruit.com/ratings/game_details.php?id=16263"
   },
   {
     nombre: "I wanna be the Lucien Needle",
